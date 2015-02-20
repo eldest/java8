@@ -14,7 +14,7 @@ public class LambdaTest {
     public void testPrintPersons() throws Exception {
         Person.printPersons(
                 persons,
-                person -> person.gender == MALE
+                person -> person.getGender() == MALE
         );
     }
 
@@ -22,7 +22,7 @@ public class LambdaTest {
     public void testProcessPersons() throws Exception {
         Person.processPersons(
                 persons,
-                person -> person.gender == MALE,
+                person -> person.getGender() == MALE,
                 Person::printPerson
         );
     }
@@ -31,8 +31,8 @@ public class LambdaTest {
     public void testProcessPersons_2() throws Exception {
         Person.processPersons(
                 persons,
-                person -> person.gender == MALE,
-                person -> person.email,
+                person -> person.getGender() == MALE,
+                Person::getEmail,
                 System.out::println
         );
     }
@@ -41,7 +41,7 @@ public class LambdaTest {
     public void testGetAges() throws Exception {
         Person.processPersons(
                 persons,
-                person -> person.gender == MALE && person.getAge() > 30,
+                person -> person.getGender() == MALE && person.getAge() > 30,
                 person -> System.out.println(String.format("%s, age: %s", person, person.getAge()))
         );
     }

@@ -9,19 +9,51 @@ import java.util.function.Predicate;
 
 public class Person {
 
-    enum Sex {
+    public enum Sex {
         MALE, FEMALE
     }
 
-    String name;
-    LocalDate birthday;
-    Sex gender;
-    String email;
+    private String name;
+    private LocalDate birthday;
+    private Sex gender;
+    private String email;
 
     public Person(String name, LocalDate birthday, Sex gender, String email) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public Sex getGender() {
+        return gender;
+    }
+
+    public void setGender(Sex gender) {
+        this.gender = gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
